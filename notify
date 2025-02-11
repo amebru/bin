@@ -1,0 +1,6 @@
+#! /bin/bash
+# intended usage: <process-to-notify-upon-completion> | notify
+terminal-notifier -message "Process finished!" -title "Notification" -sound default
+curl -X POST "https://api.telegram.org/$TELEGRAM_BOT:$TELEGRAM_KEY/sendMessage" \
+  -d chat_id=5697776222 \
+  -d text="Process finished!"
